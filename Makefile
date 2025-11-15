@@ -17,7 +17,9 @@ FLAGS = -Wall -Wextra -Werror
 
 HEADER = push_swap.h
 
-SRC = push_swap.c \
+SRC = main.c \
+	  push_swap_alg.c \
+	  push_swap_parse.c \
       push_swap_swap.c \
 	  push_swap_push.c \
 	  push_swap_rotate.c \

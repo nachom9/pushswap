@@ -20,6 +20,7 @@
 typedef struct s_nb_list
 {
 	int				number;
+	int				index;
 	struct s_nb_list	*next;
 }	nb_list;
 

@@ -16,16 +16,17 @@ static void	ft_check(long int res)
 {
 	if (res > 2147483647)
 	{
-		ft_printf("Error: integer overflow\n");
+		ft_printf("Error\n");
 		exit(1);
 	}
 
 	else if (res < -2147483648)
 	{
-		ft_printf("Error: integer underflow\n");
+		ft_printf("Error\n");
 		exit(1);
 	}
 }
+
 int	ft_atol(const char *nptr)
 {
 	long int	res;
@@ -35,13 +36,16 @@ int	ft_atol(const char *nptr)
 	i = 0;
 	sign = 1;
 	res = 0;
-	while (nptr[i] == ' ' || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 			sign = -1;
 		i++;
+	}
+	if (!(nptr[i] >= '0' && nptr[i] <= '9'))
+	{
+		ft_printf("Error\n");
+		exit(1);
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{

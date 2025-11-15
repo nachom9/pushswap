@@ -15,6 +15,10 @@
 
 #include "libft/libft.h"
 
+
+nb_list	*ft_parse(nb_list *head, char *arg);
+void    ft_index(nb_list *head_a, int nb);
+void	alg(nb_list **head_a);
 void    sa(nb_list *head_a);
 void    sb(nb_list *head_b);
 void    ss(nb_list  *head);

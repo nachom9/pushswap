@@ -21,6 +21,7 @@ void    sa(nb_list *head_a)
     tmp = head_a->number;
     head_a->number = head_a->next->number;
     head_a->next->number = tmp;
+    ft_printf("sa\n");
 }
 
 void    sb(nb_list *head_b)
