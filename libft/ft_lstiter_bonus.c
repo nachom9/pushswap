@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_lstiter(nb_list *lst, void (*f)(int))
+void	ft_lstiter(t_list *lst, void (*f)(int))
 {
 	while (lst != NULL)
 	{
@@ -41,11 +41,11 @@ void ft_up(void *c)
 
 int     main(void)
 {
-        nb_list  *list;
+        t_list  *list;
 
-        nb_list  *node2;
-        nb_list  *node3;
-        nb_list  *node4;
+        t_list  *node2;
+        t_list  *node3;
+        t_list  *node4;
 	char	number_test[] = "test";
 
         list = ft_lstnew(number_test);

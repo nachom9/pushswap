@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_lstdelone(nb_list *lst, void (*del)(int))
+void	ft_lstdelone(t_list *lst, void (*del)(int))
 {
 	del(lst->number);
 	free(lst);
@@ -27,10 +27,10 @@ static void	ft_del(void *number)
 
 int	main(void)
 {
-	nb_list	*list = NULL;
+	t_list	*list = NULL;
 
-	nb_list	*node1 = ft_lstnew("node1");
-	nb_list  *node2 = ft_lstnew("node2");
+	t_list	*node1 = ft_lstnew("node1");
+	t_list  *node2 = ft_lstnew("node2");
 
 	ft_lstadd_front(&list, node2);
 	ft_lstadd_front(&list, node1);

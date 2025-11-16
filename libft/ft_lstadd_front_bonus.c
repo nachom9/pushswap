@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_lstadd_front(nb_list **lst, nb_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
 	*lst = new;
@@ -23,8 +23,8 @@ void	ft_lstadd_front(nb_list **lst, nb_list *new)
 
 int main(void)
 {
-    nb_list *list = NULL;
-    nb_list *new_node;
+    t_list *list = NULL;
+    t_list *new_node;
 
     new_node = ft_lstnew("First node");
 
@@ -34,7 +34,7 @@ int main(void)
 
     ft_lstadd_front(&list, new_node);
 
-    nb_list *temp = list;
+    t_list *temp = list;
     while (temp)
     {
         printf("Content: %s\n", (char *)temp->number);
@@ -43,7 +43,7 @@ int main(void)
 
     while (list)
     {
-        nb_list *next = list->next;
+        t_list *next = list->next;
         free(list);
         list = next;
     }

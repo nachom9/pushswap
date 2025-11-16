@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void    pa(nb_list **head_a, nb_list **head_b)
+void    pa(t_list **head_a, t_list **head_b)
 {
-    nb_list *tmp;
+    t_list *tmp;
 
     if (!*head_b)
         return;
@@ -22,11 +22,12 @@ void    pa(nb_list **head_a, nb_list **head_b)
     (*head_b)->next = *head_a;
     *head_a = *head_b;
     *head_b = tmp;
+    ft_printf("pa\n");
 }
 
-void    pb(nb_list **head_a, nb_list **head_b)
+void    pb(t_list **head_a, t_list **head_b)
 {
-    nb_list *tmp;
+    t_list *tmp;
 
     if (!*head_a)
         return;
@@ -34,4 +35,5 @@ void    pb(nb_list **head_a, nb_list **head_b)
     (*head_a)->next = *head_b;
     *head_b = *head_a;
     *head_a = tmp;
+    ft_printf("pb\n");
 }

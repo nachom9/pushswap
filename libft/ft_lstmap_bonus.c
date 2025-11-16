@@ -6,17 +6,17 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 18:23:04 by imelero-          #+#    #+#             */
-/*   Updated: 2025/10/14 12:22:20 by imelero-         ###   ########.fr       */
+/*   Updated: 2025/11/16 18:54:00 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-nb_list	*ft_lstmap(nb_list *lst, int (*f)(int), void (*del)(int))
+t_list	*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int))
 {
-	nb_list	*new;
-	nb_list	*node;
-	int	new_number;
+	t_list	*new;
+	t_list	*node;
+	int		new_number;
 
 	if (!lst || !del || !f)
 		return (NULL);
@@ -64,11 +64,11 @@ static void *ft_up(void *c)
 
 int	main(void)
 {
-	nb_list	*list;
+	t_list	*list;
 
-	nb_list	*node2;
-	nb_list	*node3;
-	nb_list	*node4;
+	t_list	*node2;
+	t_list	*node3;
+	t_list	*node4;
 	char	number_test[] = "test";
 
 	list = ft_lstnew(number_test);

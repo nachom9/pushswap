@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void    ft_index(nb_list *head_a, int nb)
+void    ft_index(t_list *head_a, int nb)
 {
-    nb_list *last;
+    t_list *last;
 
     last = ft_lstlast(head_a);
     last->index = 0;
@@ -33,12 +33,12 @@ void    ft_index(nb_list *head_a, int nb)
     }
 }
 
-nb_list	*ft_parse(nb_list *head, char *arg)
+t_list	*ft_parse(t_list *head, char *arg)
 {
 	char	**str;
 	int	i;
 	int	nb;
-	nb_list	*lst;
+	t_list	*lst;
 
 	i = 0;
 	str = ft_split(arg, ' ');

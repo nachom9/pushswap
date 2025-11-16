@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void    ra(nb_list **head_a)
+void    ra(t_list **head_a, int print_check)
 {
-    nb_list *tmp;
-    nb_list *last;
+    t_list *tmp;
+    t_list *last;
 
     if (!*head_a)
         return;
@@ -24,12 +24,14 @@ void    ra(nb_list **head_a)
     (*head_a)->next = NULL;
     last->next = *head_a;
     *head_a = tmp;
+    if (print_check == 0)
+        ft_printf("ra\n");
 }
 
-void    rb(nb_list **head_b)
+void    rb(t_list **head_b, int print_check)
 {
-    nb_list *tmp;
-    nb_list *last;
+    t_list *tmp;
+    t_list *last;
 
     if (!*head_b)
         return;
@@ -38,12 +40,15 @@ void    rb(nb_list **head_b)
     (*head_b)->next = NULL;
     last->next = *head_b;
     *head_b = tmp;
+    if (print_check == 0)
+        ft_printf("rb\n");
 }
 
-void    rr(nb_list **head_a, nb_list **head_b)
+void    rr(t_list **head_a, t_list **head_b)
 {
     if (!*head_a || !*head_b)
         return;
-    ra(head_a);
-    rb(head_b);
+    ra(head_a, 1);
+    rb(head_b, 1);
+    ft_printf("rr\n");
 }

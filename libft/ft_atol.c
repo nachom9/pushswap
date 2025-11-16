@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:34:35 by imelero-          #+#    #+#             */
-/*   Updated: 2025/10/02 16:05:15 by imelero-         ###   ########.fr       */
+/*   Updated: 2025/11/16 18:53:47 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static void	ft_check(long int res)
 		ft_printf("Error\n");
 		exit(1);
 	}
-
 	else if (res < -2147483648)
 	{
 		ft_printf("Error\n");

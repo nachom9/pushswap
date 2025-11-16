@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_lstsize(nb_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	len;
 
@@ -29,12 +29,12 @@ int	ft_lstsize(nb_list *lst)
 
 int	main(void)
 {
-	nb_list	*list = NULL;
-	nb_list	*node1;
-	nb_list	*node2;
-	nb_list  *node3;
-	nb_list  *node4;
-	nb_list  *node5;
+	t_list	*list = NULL;
+	t_list	*node1;
+	t_list	*node2;
+	t_list  *node3;
+	t_list  *node4;
+	t_list  *node5;
 
 	node1 = ft_lstnew("node1");
 	node2 = ft_lstnew("node2");

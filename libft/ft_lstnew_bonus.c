@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-nb_list	*ft_lstnew(int number)
+t_list	*ft_lstnew(int number)
 {
-	nb_list	*nodo;
+	t_list	*nodo;
 
-	nodo = malloc(sizeof(nb_list));
+	nodo = malloc(sizeof(t_list));
 	if (!nodo)
 		return (NULL);
 	nodo->number = number;
@@ -29,10 +29,10 @@ nb_list	*ft_lstnew(int number)
 
 int main(void)
 {
-    nb_list *node;
+    t_list *node;
 
     node = ft_lstnew("Hello  world");
-    printf("Content: %s\n", (char *)nb_list->number);
+    printf("Content: %s\n", (char *)t_list->number);
     free(node);
 
     return 0;

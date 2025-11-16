@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:54:39 by imelero-          #+#    #+#             */
-/*   Updated: 2025/10/13 18:45:31 by imelero-         ###   ########.fr       */
+/*   Updated: 2025/11/16 18:53:18 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@
 # include <unistd.h>
 # include "printf/ft_printf.h"
 
-typedef struct s_nb_list
+typedef struct s_t_list
 {
-	int				number;
-	int				index;
-	struct s_nb_list	*next;
-}	nb_list;
-
-
+	int					number;
+	int					index;
+	struct s_t_list	*next;
+}	t_list;
 
 int		ft_atol(const char *nptr);
 void	ft_bzero(void *s, size_t n);
@@ -61,13 +59,13 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int nb, int fd);
 
-nb_list	*ft_lstnew(int number);
-void	ft_lstadd_front(nb_list **lst, nb_list *new);
-int		ft_lstsize(nb_list *lst);
-nb_list	*ft_lstlast(nb_list *lst);
-void	ft_lstadd_back(nb_list **lst, nb_list *new);
-void	ft_lstdelone(nb_list *lst, void (*del)(int));
-void	ft_lstclear(nb_list **lst, void (*del)(int));
-void	ft_lstiter(nb_list *lst, void (*f)(int));
-nb_list	*ft_lstmap(nb_list *lst, int (*f)(int), void (*del)(int));
+t_list	*ft_lstnew(int number);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(int));
+void	ft_lstclear(t_list **lst, void (*del)(int));
+void	ft_lstiter(t_list *lst, void (*f)(int));
+t_list	*ft_lstmap(t_list *lst, int (*f)(int), void (*del)(int));
 #endif

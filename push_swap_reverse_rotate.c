@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static nb_list	*ft_lstndlast(nb_list *lst)
+static t_list	*ft_lstndlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -21,10 +21,10 @@ static nb_list	*ft_lstndlast(nb_list *lst)
 	return (lst);
 }
 
-void    rra(nb_list **head_a)
+void    rra(t_list **head_a, int print_check)
 {
-    nb_list *last;
-    nb_list *ndlast;
+    t_list *last;
+    t_list *ndlast;
 
     if (!*head_a)
         return;
@@ -33,12 +33,14 @@ void    rra(nb_list **head_a)
     last->next = *head_a;
     *head_a = last;
     ndlast->next = NULL;
+    if (print_check == 0)
+        ft_printf("rra\n");
 }
 
-void    rrb(nb_list **head_b)
+void    rrb(t_list **head_b, int print_check)
 {
-    nb_list *last;
-    nb_list *ndlast;
+    t_list *last;
+    t_list *ndlast;
 
     if (!*head_b)
         return;
@@ -47,10 +49,13 @@ void    rrb(nb_list **head_b)
     last->next = *head_b;
     *head_b = last;
     ndlast->next = NULL;
+    if (print_check == 0)
+        ft_printf("rrb\n");
 }
 
-void    rrr(nb_list **head_a, nb_list **head_b)
+void    rrr(t_list **head_a, t_list **head_b)
 {
-    rra(head_a);
-    rrb(head_b);
+    rra(head_a, 1);
+    rrb(head_b, 1);
+    ft_printf("rrr\n");
 }

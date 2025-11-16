@@ -15,8 +15,8 @@
 int	main(int argc, char *argv[])
 {
 	int	i;
-	nb_list	*head_a = NULL;
-	nb_list	*head_b = NULL;
+	t_list	*head_a = NULL;
+	t_list	*head_b = NULL;
 
 	if (argc == 1)
 		return (0);
@@ -26,8 +26,9 @@ int	main(int argc, char *argv[])
 		head_a = ft_parse(head_a, argv[i]);
 		i++;
 	}
-	alg(&head_a);
+	count_nodes(&head_a, &head_b);
 	ft_printf("A:\n");
+	i = 0;
 	while (head_a)
 	{
 		ft_printf("Elemento %d: %d  ", i, head_a->number);
@@ -35,23 +36,19 @@ int	main(int argc, char *argv[])
 		head_a = head_a->next;
 		i++;
 	}
-
-	//creamos stack b
-	head_b = ft_parse(head_b, "10");
-	head_b = ft_parse(head_b, "20");
-	head_b = ft_parse(head_b, "30");
-	head_b = ft_parse(head_b, "40");
-	head_b = ft_parse(head_b, "50");
-	
+	/*
 	i = 0;
-	/*ft_printf("\nB:\n");
+	ft_printf("\nB:\n");
 	while (head_b)
 	{
 		ft_printf("Elemento %d: %d\n", i, head_b->number);
 		head_b = head_b->next;
 		i++;
-	}*/
-	
-	free(head_a);
+	}
+	*/
+	if(head_a)
+		free(head_a);
+	if(head_b)
+		free(head_b);
 	return (0);
 }
