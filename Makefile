@@ -20,6 +20,7 @@ HEADER = push_swap.h
 SRC = main.c \
 	  push_swap_count.c \
 	  push_swap_alg_s.c \
+	  push_swap_alg.c \
 	  push_swap_parse.c \
       push_swap_swap.c \
 	  push_swap_push.c \

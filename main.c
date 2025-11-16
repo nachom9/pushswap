@@ -26,7 +26,7 @@ int	main(int argc, char *argv[])
 		head_a = ft_parse(head_a, argv[i]);
 		i++;
 	}
-	count_nodes(&head_a, &head_b);
+	algorithm(&head_a, &head_b);
 	ft_printf("A:\n");
 	i = 0;
 	while (head_a)

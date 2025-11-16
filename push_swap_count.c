@@ -12,28 +12,17 @@
 
 #include "push_swap.h"
 
-int count_nodes(t_list **head_a, t_list **head_b)
+int count_nodes(t_list *stack)
 {
     int nodes;
-    t_list *head;
 
-    head = *head_a;
     nodes = 0;
-    while (*head_a)
+    while (stack)
     {
-        *head_a = (*head_a)->next;
+        stack = stack->next;
         nodes++;
     }
-    *head_a = head;
-    if (nodes == 0 || nodes == 1 || nodes == 2)
-        alg_onetwo(head_a, nodes);
-    if (nodes == 3)
-        alg_three(head_a);
-    if (nodes == 4)
-        alg_four(head_a, head_b);
-    if (nodes == 5)
-        alg_five(head_a, head_b);
-    return (0);
+    return (nodes);
 }
 
 int count_min_index(t_list *head)
@@ -47,4 +36,18 @@ int count_min_index(t_list *head)
         head = head->next;
     }
     return (min_index);
+}
+
+int count_max_index(t_list *head)
+{
+    int max_index;
+    
+    max_index = 0;
+    while (head)
+    {
+        if (max_index < head->index)
+            max_index = head->index;
+        head = head->next;
+    }
+    return (max_index);
 }

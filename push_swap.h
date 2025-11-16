@@ -18,8 +18,10 @@
 
 t_list	*ft_parse(t_list *head, char *arg);
 void    ft_index(t_list *head_a, int nb);
-int count_nodes(t_list **head_a, t_list **head_b);
+int count_nodes(t_list *stack);
 int count_min_index(t_list *head);
+int count_max_index(t_list *head);
+void	algorithm(t_list **stack_a, t_list **stack_b);
 void	alg_onetwo(t_list **head_a, int nodes);
 void	alg_three(t_list **head_a);
 void	alg_four(t_list **head_a, t_list **head_b);
