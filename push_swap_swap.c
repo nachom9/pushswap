@@ -12,34 +12,34 @@
 
 #include "push_swap.h"
 
-void    sa(t_list *head_a, int print_check)
+void    sa(t_list *stack_a, int print_check)
 {
 	int	tmp;
 
-	if (!head_a->number || !head_a->next->number)
+	if (!stack_a->number || !stack_a->next->number)
 		return ;
-	tmp = head_a->number;
-	head_a->number = head_a->next->number;
-	head_a->next->number = tmp;
-	tmp = head_a->index;
-	head_a->index = head_a->next->index;
-	head_a->next->index = tmp;
+	tmp = stack_a->number;
+	stack_a->number = stack_a->next->number;
+	stack_a->next->number = tmp;
+	tmp = stack_a->index;
+	stack_a->index = stack_a->next->index;
+	stack_a->next->index = tmp;
 	if (print_check == 0)
 		ft_printf("sa\n");
 }
 
-void	sb(t_list *head_b, int print_check)
+void	sb(t_list *stack_b, int print_check)
 {
 	int	tmp;
 
-	if (!head_b->number || !head_b->next->number)
+	if (!stack_b->number || !stack_b->next->number)
 		return ;
-	tmp = head_b->number;
-	head_b->number = head_b->next->number;
-	head_b->next->number = tmp;
-	tmp = head_b->index;
-	head_b->index = head_b->next->index;
-	head_b->next->index = tmp;
+	tmp = stack_b->number;
+	stack_b->number = stack_b->next->number;
+	stack_b->next->number = tmp;
+	tmp = stack_b->index;
+	stack_b->index = stack_b->next->index;
+	stack_b->next->index = tmp;
 	if (print_check == 0)
 		ft_printf("sb\n");
 }

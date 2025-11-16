@@ -12,24 +12,24 @@
 
 #include "push_swap.h"
 
-void    ft_index(t_list *head_a, int nb)
+void    ft_index(t_list *stack_a, int nb)
 {
     t_list *last;
 
-    last = ft_lstlast(head_a);
+    last = ft_lstlast(stack_a);
     last->index = 0;
-    while (head_a->next)
+    while (stack_a->next)
     {
-        if (nb < head_a->number)
-            head_a->index += 1;
-        else if (nb > head_a->number)
+        if (nb < stack_a->number)
+            stack_a->index += 1;
+        else if (nb > stack_a->number)
             last->index += 1;
-        else if (nb == head_a->number)
+        else if (nb == stack_a->number)
         {
             ft_printf("Error\n");
             exit(1);
         }
-        head_a = head_a->next;
+        stack_a = stack_a->next;
     }
 }
 

@@ -12,75 +12,75 @@
 
 #include "push_swap.h"
 
-void	alg_onetwo(t_list **head_a, int nodes)
+void	alg_onetwo(t_list **stack_a, int nodes)
 {
     if (nodes == 0 || nodes == 1)
         return ;
     if (nodes == 2)
     {
-        if ((*head_a)->number > (*head_a)->next->number)
-            sa(*head_a, 0);
+        if ((*stack_a)->number > (*stack_a)->next->number)
+            sa(*stack_a, 0);
         return ;
     }
 }
 
-void	alg_three(t_list **head_a)
+void	alg_three(t_list **stack_a)
 {
-    if ((*head_a)->index == count_min_index(*head_a))
+    if ((*stack_a)->index == count_min_index(*stack_a))
     {
-        if ((*head_a)->next->index == count_min_index(*head_a) + 1)
+        if ((*stack_a)->next->index == count_min_index(*stack_a) + 1)
             return;
         else
             {
-                rra(head_a, 0);
-                sa(*head_a, 0);
+                rra(stack_a, 0);
+                sa(*stack_a, 0);
             }
     }
-    else if ((*head_a)->index == count_min_index(*head_a) + 1)
+    else if ((*stack_a)->index == count_min_index(*stack_a) + 1)
     {
-        if ((*head_a)->next->index == count_min_index(*head_a))
-            sa(*head_a, 0);
-        else if ((*head_a)->next->index == count_min_index(*head_a)+ 2)
-            rra(head_a, 0);
+        if ((*stack_a)->next->index == count_min_index(*stack_a))
+            sa(*stack_a, 0);
+        else if ((*stack_a)->next->index == count_min_index(*stack_a)+ 2)
+            rra(stack_a, 0);
     }
-    else if ((*head_a)->index == count_min_index(*head_a) + 2)
+    else if ((*stack_a)->index == count_min_index(*stack_a) + 2)
     {
-        ra(head_a, 0);
-        if ((*head_a)->index == count_min_index(*head_a) + 1)
-            sa(*head_a, 0);
+        ra(stack_a, 0);
+        if ((*stack_a)->index == count_min_index(*stack_a) + 1)
+            sa(*stack_a, 0);
     }
 }
 
-void	alg_four(t_list **head_a, t_list **head_b)
+void	alg_four(t_list **stack_a, t_list **stack_b)
 {
     int i;
     t_list *tmp;
 
-    tmp = *head_a;
+    tmp = *stack_a;
     i = 0;
-    while (tmp && tmp->index != count_min_index(*head_a))
+    while (tmp && tmp->index != count_min_index(*stack_a))
     {
         tmp = tmp->next;
         i++;
     }
     if (i == 3)
-        rra(head_a, 0);
+        rra(stack_a, 0);
     else
     {
         while(i--)
-            ra(head_a, 0);
+            ra(stack_a, 0);
     }
-    pb(head_a, head_b);
-    alg_three(head_a);
-    pa(head_a, head_b);
+    pb(stack_a, stack_b);
+    alg_three(stack_a);
+    pa(stack_a, stack_b);
 }
 
-void	alg_five(t_list **head_a, t_list **head_b)
+void	alg_five(t_list **stack_a, t_list **stack_b)
 {
     int i;
     t_list *tmp;
 
-    tmp = *head_a;
+    tmp = *stack_a;
     i = 0;
     while (tmp && tmp->index != 0)
     {
@@ -90,14 +90,14 @@ void	alg_five(t_list **head_a, t_list **head_b)
     if (i > 2)
     {
         while (i++ != 5)
-            rra(head_a, 0);
+            rra(stack_a, 0);
     }
     else
     {
         while(i--)
-            ra(head_a, 0);
+            ra(stack_a, 0);
     }
-    pb(head_a, head_b);
-    alg_four(head_a, head_b);
-    pa(head_a, head_b);
+    pb(stack_a, stack_b);
+    alg_four(stack_a, stack_b);
+    pa(stack_a, stack_b);
 }

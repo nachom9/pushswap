@@ -15,40 +15,40 @@
 int	main(int argc, char *argv[])
 {
 	int	i;
-	t_list	*head_a = NULL;
-	t_list	*head_b = NULL;
+	t_list	*stack_a = NULL;
+	t_list	*stack_b = NULL;
 
 	if (argc == 1)
 		return (0);
 	i = 1;
 	while (argv[i])
 	{
-		head_a = ft_parse(head_a, argv[i]);
+		stack_a = ft_parse(stack_a, argv[i]);
 		i++;
 	}
-	algorithm(&head_a, &head_b);
+	algorithm(&stack_a, &stack_b);
 	ft_printf("A:\n");
 	i = 0;
-	while (head_a)
+	while (stack_a)
 	{
-		ft_printf("Elemento %d: %d  ", i, head_a->number);
-		ft_printf("Index: %d\n", head_a->index);
-		head_a = head_a->next;
+		ft_printf("Elemento %d: %d  ", i, stack_a->number);
+		ft_printf("Index: %d\n", stack_a->index);
+		stack_a = stack_a->next;
 		i++;
 	}
 	/*
 	i = 0;
 	ft_printf("\nB:\n");
-	while (head_b)
+	while (stack_b)
 	{
-		ft_printf("Elemento %d: %d\n", i, head_b->number);
-		head_b = head_b->next;
+		ft_printf("Elemento %d: %d\n", i, stack_b->number);
+		stack_b = stack_b->next;
 		i++;
 	}
 	*/
-	if(head_a)
-		free(head_a);
-	if(head_b)
-		free(head_b);
+	if(stack_a)
+		free(stack_a);
+	if(stack_b)
+		free(stack_b);
 	return (0);
 }

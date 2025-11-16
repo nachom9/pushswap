@@ -12,43 +12,43 @@
 
 #include "push_swap.h"
 
-void    ra(t_list **head_a, int print_check)
+void    ra(t_list **stack_a, int print_check)
 {
     t_list *tmp;
     t_list *last;
 
-    if (!*head_a)
+    if (!*stack_a)
         return;
-    tmp = (*head_a)->next;
-    last = ft_lstlast(*head_a);
-    (*head_a)->next = NULL;
-    last->next = *head_a;
-    *head_a = tmp;
+    tmp = (*stack_a)->next;
+    last = ft_lstlast(*stack_a);
+    (*stack_a)->next = NULL;
+    last->next = *stack_a;
+    *stack_a = tmp;
     if (print_check == 0)
         ft_printf("ra\n");
 }
 
-void    rb(t_list **head_b, int print_check)
+void    rb(t_list **stack_b, int print_check)
 {
     t_list *tmp;
     t_list *last;
 
-    if (!*head_b)
+    if (!*stack_b)
         return;
-    tmp = (*head_b)->next;
-    last = ft_lstlast(*head_b);
-    (*head_b)->next = NULL;
-    last->next = *head_b;
-    *head_b = tmp;
+    tmp = (*stack_b)->next;
+    last = ft_lstlast(*stack_b);
+    (*stack_b)->next = NULL;
+    last->next = *stack_b;
+    *stack_b = tmp;
     if (print_check == 0)
         ft_printf("rb\n");
 }
 
-void    rr(t_list **head_a, t_list **head_b)
+void    rr(t_list **stack_a, t_list **stack_b)
 {
-    if (!*head_a || !*head_b)
+    if (!*stack_a || !*stack_b)
         return;
-    ra(head_a, 1);
-    rb(head_b, 1);
+    ra(stack_a, 1);
+    rb(stack_b, 1);
     ft_printf("rr\n");
 }
