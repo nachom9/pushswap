@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:23:48 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/17 02:52:36 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 22:19:53 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(int argc, char *argv[])
 {
-	int	i;
-	t_list	*stack_a = NULL;
-	t_list	*stack_b = NULL;
+	int		i;
+	t_list	*stack_a;
+	t_list	*stack_b;
 
 	if (argc == 1)
 		return (0);
@@ -28,9 +28,9 @@ int	main(int argc, char *argv[])
 	}
 	algorithm(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
-	if(stack_a)
+	if (stack_a)
 		free(stack_a);
-	if(stack_b)
+	if (stack_b)
 		free(stack_b);
 	return (0);
 }

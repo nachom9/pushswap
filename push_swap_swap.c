@@ -6,13 +6,13 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 13:15:24 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/16 18:11:31 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 22:18:41 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    sa(t_list *stack_a, int print_check)
+void	sa(t_list *stack_a, int print_check)
 {
 	int	tmp;
 

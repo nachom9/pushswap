@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:55:23 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/14 16:55:24 by imelero-         ###   ########.fr       */
+/*   Updated: 2025/11/17 22:17:40 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,41 +21,41 @@ static t_list	*ft_lstndlast(t_list *lst)
 	return (lst);
 }
 
-void    rra(t_list **stack_a, int print_check)
+void	rra(t_list **stack_a, int print_check)
 {
-    t_list *last;
-    t_list *ndlast;
+	t_list	*last;
+	t_list	*ndlast;
 
-    if (!*stack_a)
-        return;
-    last = ft_lstlast(*stack_a);
-    ndlast = ft_lstndlast(*stack_a);
-    last->next = *stack_a;
-    *stack_a = last;
-    ndlast->next = NULL;
-    if (print_check == 0)
-        ft_printf("rra\n");
+	if (!*stack_a)
+		return ;
+	last = ft_lstlast(*stack_a);
+	ndlast = ft_lstndlast(*stack_a);
+	last->next = *stack_a;
+	*stack_a = last;
+	ndlast->next = NULL;
+	if (print_check == 0)
+		ft_printf("rra\n");
 }
 
-void    rrb(t_list **stack_b, int print_check)
+void	rrb(t_list **stack_b, int print_check)
 {
-    t_list *last;
-    t_list *ndlast;
+	t_list	*last;
+	t_list	*ndlast;
 
-    if (!*stack_b)
-        return;
-    last = ft_lstlast(*stack_b);
-    ndlast = ft_lstndlast(*stack_b);
-    last->next = *stack_b;
-    *stack_b = last;
-    ndlast->next = NULL;
-    if (print_check == 0)
-        ft_printf("rrb\n");
+	if (!*stack_b)
+		return ;
+	last = ft_lstlast(*stack_b);
+	ndlast = ft_lstndlast(*stack_b);
+	last->next = *stack_b;
+	*stack_b = last;
+	ndlast->next = NULL;
+	if (print_check == 0)
+		ft_printf("rrb\n");
 }
 
-void    rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b)
 {
-    rra(stack_a, 1);
-    rrb(stack_b, 1);
-    ft_printf("rrr\n");
+	rra(stack_a, 1);
+	rrb(stack_b, 1);
+	ft_printf("rrr\n");
 }

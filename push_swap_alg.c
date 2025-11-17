@@ -6,7 +6,7 @@
 /*   By: nacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 21:57:04 by nacho             #+#    #+#             */
-/*   Updated: 2025/11/17 02:32:08 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 22:25:12 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 static void	move_to_b(t_list **stack_a, t_list **stack_b, int nodes)
 {
-	int	delta = nodes / 20 + 7;
+	int	delta;
 	int	i;
 
+	delta = nodes / 20 + 7;
 	i = 0;
 	while (*stack_a)
 	{
@@ -34,7 +35,7 @@ static void	move_to_b(t_list **stack_a, t_list **stack_b, int nodes)
 
 static void	push_biggest(t_list **stack_b, int nodes)
 {
-	int	i;
+	int		i;
 	t_list	*tmp;
 
 	tmp = *stack_b;

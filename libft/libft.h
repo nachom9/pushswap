@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:54:39 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/17 02:51:01 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 22:06:11 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 
 typedef struct s_t_list
 {
-	int					number;
-	int					index;
+	int				number;
+	int				index;
 	struct s_t_list	*next;
 }	t_list;
 
-int	ft_atol(const char *nptr, t_list *stack_a, char **str, int j);
+int		ft_atol(const char *nptr, t_list *stack_a, char **str, int j);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
@@ -65,6 +65,6 @@ int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(int));
-void    ft_lstclear(t_list **lst);
+void	ft_lstclear(t_list **lst);
 void	ft_lstiter(t_list *lst, void (*f)(int));
 #endif

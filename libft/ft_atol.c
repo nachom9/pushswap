@@ -6,13 +6,13 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 15:34:35 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/16 18:53:47 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 22:03:10 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		ft_free_lib(t_list **stack_a, char **str, int i)
+static void	ft_free_lib(t_list **stack_a, char **str, int i)
 {
 	ft_lstclear(stack_a);
 	free(str[i]);
