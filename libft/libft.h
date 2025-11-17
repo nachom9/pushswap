@@ -24,7 +24,7 @@ typedef struct s_t_list
 	struct s_t_list	*next;
 }	t_list;
 
-int		ft_atol(const char *nptr);
+int	ft_atol(const char *nptr, t_list *stack_a, char **str, int j);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);

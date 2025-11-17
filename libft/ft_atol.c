@@ -12,21 +12,22 @@
 
 #include "libft.h"
 
-static void	ft_check(long int res)
+static void		ft_free_lib(t_list **stack_a, char **str, int i)
 {
-	if (res > 2147483647)
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
-	else if (res < -2147483648)
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
+	ft_lstclear(stack_a);
+	free(str[i]);
+	free(str);
+	ft_printf("Error\n");
+	exit (1);
 }
 
-int	ft_atol(const char *nptr)
+static void	ft_check(long int res, t_list *stack_a, char **str, int i)
+{
+	if (res < -2147483648 || res > 2147483647)
+		ft_free_lib(&stack_a, str, i);
+}
+
+int	ft_atol(const char *nptr, t_list *stack_a, char **str, int j)
 {
 	long int	res;
 	int			i;
@@ -42,15 +43,12 @@ int	ft_atol(const char *nptr)
 		i++;
 	}
 	if (!(nptr[i] >= '0' && nptr[i] <= '9'))
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
+		ft_free_lib(&stack_a, str, j);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		res = res * 10 + nptr[i] - '0';
 		i++;
 	}
-	ft_check(res * sign);
+	ft_check(res * sign, stack_a, str, j);
 	return (res * sign);
 }

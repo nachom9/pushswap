@@ -17,7 +17,7 @@
 
 
 t_list	*ft_parse(t_list *head, char *arg);
-void    ft_index(t_list *stack_a, int nb);
+void	ft_free(t_list **stack_a, char **str);
 int count_nodes(t_list *stack);
 int count_min_index(t_list *head);
 int count_max_index(t_list *head);
