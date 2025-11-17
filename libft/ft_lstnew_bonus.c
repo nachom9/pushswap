@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:09:05 by imelero-          #+#    #+#             */
-/*   Updated: 2025/10/13 13:33:34 by imelero-         ###   ########.fr       */
+/*   Updated: 2025/11/17 02:37:46 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 t_list	*ft_lstnew(int number)
 {
-	t_list	*nodo;
+	t_list	*node;
 
-	nodo = malloc(sizeof(t_list));
-	if (!nodo)
+	node = malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	nodo->number = number;
-	nodo->next = (NULL);
+	node->number = number;
+	node->next = (NULL);
 	return (nodo);
 }
 /*

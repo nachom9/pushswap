@@ -6,7 +6,7 @@
 /*   By: nacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 16:19:36 by nacho             #+#    #+#             */
-/*   Updated: 2025/11/15 16:19:39 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 02:37:03 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ t_list	*ft_parse(t_list *head, char *arg)
 		free(str[i]);
 		lst = ft_lstnew(nb);
 		ft_lstadd_back(&head, lst);
-        ft_index(head, nb);
+		ft_index(head, nb);
 		i++;
 	}
 	free(str);

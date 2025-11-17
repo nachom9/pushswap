@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:23:48 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/15 15:52:31 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 02:44:41 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,6 @@ int	main(int argc, char *argv[])
 		i++;
 	}
 	algorithm(&stack_a, &stack_b);
-	ft_printf("A:\n");
-	i = 0;
-	while (stack_a)
-	{
-		ft_printf("Elemento %d: %d  ", i, stack_a->number);
-		ft_printf("Index: %d\n", stack_a->index);
-		stack_a = stack_a->next;
-		i++;
-	}
-	/*
-	i = 0;
-	ft_printf("\nB:\n");
-	while (stack_b)
-	{
-		ft_printf("Elemento %d: %d\n", i, stack_b->number);
-		stack_b = stack_b->next;
-		i++;
-	}
-	*/
 	if(stack_a)
 		free(stack_a);
 	if(stack_b)

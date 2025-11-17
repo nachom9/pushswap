@@ -6,7 +6,7 @@
 /*   By: nacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 21:57:04 by nacho             #+#    #+#             */
-/*   Updated: 2025/11/16 22:50:28 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 02:32:08 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ static void	move_to_b(t_list **stack_a, t_list **stack_b, int nodes)
 		if ((*stack_a)->index <= delta + i)
 		{
 			pb(stack_a, stack_b);
+			if ((*stack_b)->index <= i)
+				rb(stack_b, 0);
 			i++;
 		}
 		else
@@ -42,14 +44,14 @@ static void	push_biggest(t_list **stack_b, int nodes)
 		tmp = tmp->next;
 		i++;
 	}
-	if (i < nodes / 2)
+	if (i <= nodes / 2)
 	{
-		while ((*stack_b)->index != count_max_index(*stack_b))
+		while ((*stack_b)->index != tmp->index)
 			rb(stack_b, 0);
 	}
-	else if (i > nodes / 2)
+	else
 	{
-		while ((*stack_b)->index != count_max_index(*stack_b))
+		while ((*stack_b)->index != tmp->index)
 			rrb(stack_b, 0);
 	}
 }
@@ -80,13 +82,3 @@ void	algorithm(t_list **stack_a, t_list **stack_b)
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
