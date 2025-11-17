@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:09:05 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/17 02:37:46 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/17 02:46:33 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_list	*ft_lstnew(int number)
 		return (NULL);
 	node->number = number;
 	node->next = (NULL);
-	return (nodo);
+	return (node);
 }
 /*
 
