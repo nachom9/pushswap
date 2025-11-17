@@ -6,7 +6,7 @@
 #    By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/03 13:34:43 by imelero-          #+#    #+#              #
-#    Updated: 2025/11/13 17:02:36 by imelero-         ###   ########.fr        #
+#    Updated: 2025/11/17 02:51:30 by nacho            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,6 @@ SRC = ft_atol.c \
       ft_lstdelone_bonus.c \
       ft_lstclear_bonus.c \
       ft_lstiter_bonus.c \
-      ft_lstmap_bonus.c \
       printf/ft_printf.c \
       printf/ft_printf_utils.c \
       printf/ft_printf_utils_extra.c \
