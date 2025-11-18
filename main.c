@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:23:48 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/18 21:13:39 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/18 21:27:55 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,8 @@ int	main(int argc, char *argv[])
 		stack_a = ft_parse(stack_a, argv[i]);
 		i++;
 	}
-	if (!order_check(stack_a))
-		return (0);
-	algorithm(&stack_a, &stack_b);
+	if (order_check(stack_a))
+		algorithm(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
 	if (stack_a)
 		free(stack_a);
