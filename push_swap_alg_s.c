@@ -6,7 +6,7 @@
 /*   By: nacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 15:50:36 by nacho             #+#    #+#             */
-/*   Updated: 2025/11/17 22:26:55 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/18 18:02:25 by imelero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	alg_onetwo(t_list **stack_a, int nodes)
 		return ;
 	if (nodes == 2)
 	{
-		if ((*stack_a)->number > (*stack_a)->next->number)
+		if ((*stack_a)->index > (*stack_a)->next->index)
 			sa(*stack_a, 0);
 		return ;
 	}
@@ -26,29 +26,30 @@ void	alg_onetwo(t_list **stack_a, int nodes)
 
 void	alg_three(t_list **stack_a)
 {
-	if ((*stack_a)->index == count_min_index(*stack_a))
+	int	first;
+	int second;
+	int third;
+
+	first = (*stack_a)->index;
+	second = (*stack_a)->next->index;
+	third = (*stack_a)->next->next->index;
+
+	if (first < second && second > third && first < third)
+		rra(stack_a, 0);
+	else if (first > second && second < third && first < third)
+		sa(*stack_a, 0);
+	else if (first < second && second > third && first > third)
 	{
-		if ((*stack_a)->next->index == count_min_index(*stack_a) + 1)
-			return ;
-		else
-		{
-			rra(stack_a, 0);
-			sa(*stack_a, 0);
-		}
-	}
-	else if ((*stack_a)->index == count_min_index(*stack_a) + 1)
-	{
-		if ((*stack_a)->next->index == count_min_index(*stack_a))
-			sa(*stack_a, 0);
-		else if ((*stack_a)->next->index == count_min_index(*stack_a) + 2)
-			rra(stack_a, 0);
-	}
-	else if ((*stack_a)->index == count_min_index(*stack_a) + 2)
-	{
+		sa(*stack_a, 0);
 		ra(stack_a, 0);
-		if ((*stack_a)->index == count_min_index(*stack_a) + 1)
-			sa(*stack_a, 0);
 	}
+	else if (first > second && second > third && first > third)
+	{
+		sa(*stack_a, 0);
+		rra(stack_a, 0);
+	}
+	else if (first > second && second < third && first > third)
+		ra(stack_a, 0);
 }
 
 void	alg_four(t_list **stack_a, t_list **stack_b)
@@ -65,10 +66,14 @@ void	alg_four(t_list **stack_a, t_list **stack_b)
 	}
 	if (i == 3)
 		rra(stack_a, 0);
-	else
+	else if (i == 2)
 	{
-		while (i--)
-			ra(stack_a, 0);
+		ra(stack_a, 0);
+		ra(stack_a, 0);
+	}
+	else if (i == 1)
+	{
+		ra(stack_a, 0);
 	}
 	pb(stack_a, stack_b);
 	alg_three(stack_a);

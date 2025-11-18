@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 13:15:24 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/17 22:18:41 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/18 17:10:04 by imelero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sa(t_list *stack_a, int print_check)
 {
 	int	tmp;
 
-	if (!stack_a->number || !stack_a->next->number)
+	if (!stack_a || !stack_a->next)
 		return ;
 	tmp = stack_a->number;
 	stack_a->number = stack_a->next->number;
@@ -32,7 +32,7 @@ void	sb(t_list *stack_b, int print_check)
 {
 	int	tmp;
 
-	if (!stack_b->number || !stack_b->next->number)
+	if (!stack_b || !stack_b->next)
 		return ;
 	tmp = stack_b->number;
 	stack_b->number = stack_b->next->number;

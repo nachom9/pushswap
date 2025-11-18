@@ -17,7 +17,7 @@ static void	ft_free_lib(t_list **stack_a, char **str, int i)
 	ft_lstclear(stack_a);
 	free(str[i]);
 	free(str);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit (1);
 }
 
@@ -36,19 +36,19 @@ int	ft_atol(const char *nptr, t_list *stack_a, char **str, int j)
 	i = 0;
 	sign = 1;
 	res = 0;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if ((nptr[i] == '-' || nptr[i] == '+') && nptr[i + 1])
 	{
 		if (nptr[i] == '-')
 			sign = -1;
 		i++;
 	}
-	if (!(nptr[i] >= '0' && nptr[i] <= '9'))
-		ft_free_lib(&stack_a, str, j);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		res = res * 10 + nptr[i] - '0';
 		i++;
 	}
+	if (!(nptr[i] >= '0' && nptr[i] <= '9') && nptr[i])
+		ft_free_lib(&stack_a, str, j);
 	ft_check(res * sign, stack_a, str, j);
 	return (res * sign);
 }

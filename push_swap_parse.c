@@ -6,7 +6,7 @@
 /*   By: nacho <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 16:19:36 by nacho             #+#    #+#             */
-/*   Updated: 2025/11/17 22:24:06 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/18 17:37:27 by imelero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_free(t_list **stack_a, char **str)
 {
 	ft_lstclear(stack_a);
 	free(str);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit (1);
 }
 

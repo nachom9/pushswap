@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 16:29:54 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/17 22:21:32 by nacho            ###   ########.fr       */
+/*   Updated: 2025/11/18 16:59:00 by imelero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ra(t_list **stack_a, int print_check)
 	t_list	*tmp;
 	t_list	*last;
 
-	if (!*stack_a)
+	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	tmp = (*stack_a)->next;
 	last = ft_lstlast(*stack_a);
@@ -33,7 +33,7 @@ void	rb(t_list **stack_b, int print_check)
 	t_list	*tmp;
 	t_list	*last;
 
-	if (!*stack_b)
+	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	tmp = (*stack_b)->next;
 	last = ft_lstlast(*stack_b);
