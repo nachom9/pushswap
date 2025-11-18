@@ -6,7 +6,7 @@
 /*   By: imelero- <imelero-@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:23:48 by imelero-          #+#    #+#             */
-/*   Updated: 2025/11/18 17:55:55 by imelero-         ###   ########.fr       */
+/*   Updated: 2025/11/18 21:13:39 by nacho            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static void	ft_error(void)
 	write(2, "Error\n", 6);
 	exit (1);
 }
+
 int	main(int argc, char *argv[])
 {
 	int		i;
@@ -49,13 +50,6 @@ int	main(int argc, char *argv[])
 	if (!order_check(stack_a))
 		return (0);
 	algorithm(&stack_a, &stack_b);
-
-	while(stack_a)
-	{
-		ft_printf("Number: %d, Index: %d\n", stack_a->number, stack_a->index);
-		stack_a = (stack_a)->next;
-	}
-	
 	ft_lstclear(&stack_a);
 	if (stack_a)
 		free(stack_a);
